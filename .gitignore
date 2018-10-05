@@ -7,3 +7,5 @@ extras/svg
 EspruinoWebIDE.zip
 .vscode
 .DS_Store
+electron-builder.yml
+dist/**

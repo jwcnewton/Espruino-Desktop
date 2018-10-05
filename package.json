@@ -1,8 +1,10 @@
 {
   "name": "espruino-electron",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A minimal Electron application",
   "main": "main.js",
+  "repository": "https://github.com/jwcnewton/espruino-ide-electron",
+  "author": "jwcnewton",
   "window": {
     "title": "Espruino Native IDE",
     "toolbar": true,
@@ -17,13 +19,20 @@
   "//chromium-args": "--enable-logging=stderr --enable-web-bluetooth",
   "//2": "-------------------------------------------------------- NPM",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "ship": "build --win -p always",
+    "pack": "build --dir",
+    "publish": "build --mac --win -p always",
+    "publish2": "run-s build:prod icons release",
+    "release": "build"
   },
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "~1.7.8"
+    "electron": "~1.7.8",
+    "electron-builder": "^20.28.4"
   },
   "dependencies": {
+    "electron-updater": "^3.1.2",
     "utf8": "^2.1.2",
     "websocket": "^1.0.23"
   },
@@ -31,5 +40,55 @@
     "noble": "^1.7.0",
     "serialport": "^4.0.4",
     "winnus": ""
+  },
+  "build": {
+    "appId": "com.espruino-electron",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "jwcnewton",
+        "repo": "espruino-ide-electron"
+      }
+    ],
+    "files": [
+      "main.js",
+      "EspruinoTools/**",
+      "app/**",
+      "!**/node_modules/*/build${/*}",
+      "!**/node_modules/*/build/**/*.node",
+      "!**/node_modules/*/bin/**/*.node",
+      "!**/node_modules/*/deps${/*}",
+      "!**/node_modules/**/{*.cc,*.obj,*.pdb}",
+      "**/node_modules/node-pre-gyp${/*}"
+    ],
+    "directories": {
+      "output": "./dist"
+    },
+    "mac": {
+      "category": "public.app-category.programming"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "icon": "./favicon.ico",
+      "target": "nsis"
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false,
+      "perMachine": true
+    }
   }
 }
