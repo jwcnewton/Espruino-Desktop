@@ -38,10 +38,17 @@ Raise an issue and tag it as bug with steps to reproduce
 
 ## Goals/Milestones
 
+- [x] Automatic updates
 - [ ] Finish developement to provide a like for like with functionality in the web IDE
 - [ ] Install esptool from desktop
 - [ ] Flash espruino from the desktop app, including installing virtual COM Port (VCP) drivers
 - [ ] Integrated VS Code ide
+- [ ] Build feedback using dekstop alerts
+- [ ] Better project management including AMD support
+- [ ] (Stretch) Remote debugging
+- [ ] Code snippets
+- [ ] Create gists from a connected github account
+- [ ] (Ties in with better ide) Better syntax highlighting and IDE theming
 
 ## Resources 
 [Espruino](http://www.espruino.com/)
