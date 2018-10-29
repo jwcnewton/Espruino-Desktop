@@ -45,3 +45,5 @@ Raise an issue and tag it as bug with steps to reproduce
 [Esptools](https://github.com/espressif/esptool)
 
 [VCP Drivers](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers)
+
+[Support the creators](https://www.patreon.com/espruino)
