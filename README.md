@@ -24,6 +24,10 @@ Supporters that pay $10/month or more to help support Espruino are:
 Matt Eckman, Michael Leibman, Orry S, Eric Betts, MaBe, Sacha Gloor, INT3GRATION, James Palmer, Andreas Dröscher, 
 Erlend Finvåg, Dimitri Deniusov, John Kovach, Spence Konde
 
+## Why does this repo exist
+
+I think the Espruino IDE is fantastic! However I think a full supported desktop version is needed.
+
 ## This project seems quiet?
 
 I started this in an airport and I will probably "finish" this in an airport, one of the issues is having the variety of hardware flashed with espruino to hand I currently only have a node mcu and redbear duo flashed!
